@@ -1,9 +1,14 @@
 
 
+//hotfix/fix-product-status
+
+
+
 // v1.0 - Product Card
 
 
 // Feature: Product Card Comp=======
+
 
 
 function ProductCard({ product, onDelete, onEdit }) {
