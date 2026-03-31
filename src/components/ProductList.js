@@ -1,3 +1,4 @@
+// Feature: Product List Component
 import ProductCard from './ProductCard';
 
 function ProductList({ products, onDelete, onEdit }) {
