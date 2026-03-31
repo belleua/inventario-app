@@ -1,3 +1,5 @@
+// Feature: Product Card Component
+
 function ProductCard({ product, onDelete, onEdit }) {
   const statusConfig = {
     disponible: { label: 'Disponible', cls: 'badge-disponible' },
