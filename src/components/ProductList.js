@@ -1,4 +1,9 @@
+
+// v1.0 - Sidebar Navigation
+
+
 // Feature: Product List Component
+
 import ProductCard from './ProductCard';
 
 function ProductList({ products, onDelete, onEdit }) {
