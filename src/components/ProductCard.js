@@ -1,7 +1,10 @@
 
+
 // v1.0 - Product Card
 
-// Feature: Product Card Component
+
+// Feature: Product Card Comp=======
+
 
 function ProductCard({ product, onDelete, onEdit }) {
   const statusConfig = {
