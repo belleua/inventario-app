@@ -1,3 +1,7 @@
+
+
+// hotfix: status badge fix v1.1
+
 function ProductCard({ product, onDelete, onEdit }) {
   const statusConfig = {
     disponible: { label: 'Disponible', cls: 'badge-disponible' },
