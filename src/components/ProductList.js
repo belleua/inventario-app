@@ -1,3 +1,5 @@
+// v1.0 - Sidebar Navigation
+
 import ProductCard from './ProductCard';
 
 function ProductList({ products, onDelete, onEdit }) {

@@ -1,4 +1,4 @@
-// Hotfix: Fix product status display
+// v1.0 - Product Card
 
 function ProductCard({ product, onDelete, onEdit }) {
   const statusConfig = {
