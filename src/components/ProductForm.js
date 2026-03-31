@@ -1,3 +1,7 @@
+// Feature:         
+// Form Component  
+
+
 import { useState, useEffect } from 'react';
 
 function ProductForm({ onAdd, onUpdate, editingProduct, onCancel }) {
