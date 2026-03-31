@@ -1,3 +1,6 @@
+// Feature: Sidebar Navigation
+// // v1.0 - Status Fix
+
 import { useState } from 'react';
 import ProductForm from './components/ProductForm';
 import ProductList from './components/ProductList';
