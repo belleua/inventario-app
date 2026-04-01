@@ -1,3 +1,18 @@
+
+
+//hotfix/fix-product-status
+
+
+
+// v1.0 - Product Card
+
+
+// Feature: Product Card Comp=======
+
+=======
+// Feature: Product Card Component>>>>>>> main
+
+
 function ProductCard({ product, onDelete, onEdit }) {
   const statusConfig = {
     disponible: { label: 'Disponible', cls: 'badge-disponible' },
