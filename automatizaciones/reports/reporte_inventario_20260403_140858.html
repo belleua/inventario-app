@@ -1,0 +1,177 @@
+<html>... (Tu diseño CSS y HTML anterior usando 
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU01Acceso</span></td>
+          <td>test_01_camino_feliz_carga_exitosa</td>
+          <td>La página principal carga correctamente y muestra el panel.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>11.41s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU01Acceso</span></td>
+          <td>test_02_negativo_url_invalida</td>
+          <td>Acceder a una ruta inexistente devuelve página de error o redirige.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>6.35s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU01Acceso</span></td>
+          <td>test_03_limite_carga_rapida</td>
+          <td>La app debe cargar en menos de 5 segundos.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>5.51s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU02AgregarProducto</span></td>
+          <td>test_01_camino_feliz_agregar_producto</td>
+          <td>Agregar un producto con todos los datos válidos.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>7.09s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU02AgregarProducto</span></td>
+          <td>test_02_negativo_campos_vacios</td>
+          <td>Intentar guardar con campos obligatorios vacíos.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>6.96s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU02AgregarProducto</span></td>
+          <td>test_03_limite_nombre_muy_largo</td>
+          <td>Intentar agregar un producto con nombre de 300 caracteres.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>7.24s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU02AgregarProducto</span></td>
+          <td>test_04_limite_precio_cero</td>
+          <td>Intentar agregar un producto con precio = 0.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>7.07s</td>
+          <td></td>
+        </tr>
+        <tr class="row-fail">
+          <td><span class="hu-class">TestHU03LeerProductos</span></td>
+          <td>test_01_camino_feliz_lista_visible</td>
+          <td>La tabla o lista de productos se muestra en pantalla.</td>
+          <td><span class="badge badge-fail">❌ FAIL</span></td>
+          <td>4.43s</td>
+          <td><span class="detail">0 not greater than 0 : Debe existir algún contenedor de lista</span></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU03LeerProductos</span></td>
+          <td>test_02_negativo_sin_productos</td>
+          <td>Si no hay productos, la app muestra un mensaje vacío (no un error).</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>7.11s</td>
+          <td></td>
+        </tr>
+        <tr class="row-fail">
+          <td><span class="hu-class">TestHU03LeerProductos</span></td>
+          <td>test_03_limite_panel_estadisticas</td>
+          <td>El panel de estadísticas se muestra y contiene números.</td>
+          <td><span class="badge badge-fail">❌ FAIL</span></td>
+          <td>4.45s</td>
+          <td><span class="detail">False is not true : El panel debería mostrar al menos un número estadístico</span></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU04EditarProducto</span></td>
+          <td>test_01_camino_feliz_editar_producto</td>
+          <td>Hacer clic en editar abre el formulario con datos precargados.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>6.91s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU04EditarProducto</span></td>
+          <td>test_02_negativo_editar_precio_negativo</td>
+          <td>Intentar guardar un precio negativo al editar.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>8.38s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU04EditarProducto</span></td>
+          <td>test_03_limite_stock_maximo</td>
+          <td>Intentar editar con stock = 999999 (valor extremo).</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>8.34s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU05EliminarProducto</span></td>
+          <td>test_01_camino_feliz_eliminar_producto</td>
+          <td>Hacer clic en eliminar y confirmar borra el producto.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>9.71s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU05EliminarProducto</span></td>
+          <td>test_02_negativo_cancelar_eliminacion</td>
+          <td>Cancelar la eliminación no borra el producto.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>7.31s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU05EliminarProducto</span></td>
+          <td>test_03_limite_eliminar_todos</td>
+          <td>Eliminar todos los productos no debe romper la interfaz.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>7.01s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU06ClasificacionEstado</span></td>
+          <td>test_01_camino_feliz_etiquetas_estado</td>
+          <td>La página muestra etiquetas de estado (Disponible / Bajo Stock / Agotado).</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>6.92s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU06ClasificacionEstado</span></td>
+          <td>test_02_negativo_estado_desconocido</td>
+          <td>La app no debe mostrar un estado 'undefined' o 'null' en etiquetas.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>6.78s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU06ClasificacionEstado</span></td>
+          <td>test_03_limite_filtro_por_estado</td>
+          <td>Si existe filtro por estado, puede usarse sin errores.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>7.24s</td>
+          <td></td>
+        </tr>
+        <tr class="row-fail">
+          <td><span class="hu-class">TestHU07PanelEstadisticas</span></td>
+          <td>test_01_camino_feliz_panel_visible</td>
+          <td>El panel de estadísticas es visible y contiene información.</td>
+          <td><span class="badge badge-fail">❌ FAIL</span></td>
+          <td>4.64s</td>
+          <td><span class="detail">False is not true : La página debería tener cards de estadísticas o contenido</span></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU07PanelEstadisticas</span></td>
+          <td>test_02_negativo_sin_errores_consola</td>
+          <td>El panel no genera errores JavaScript graves.</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>7.53s</td>
+          <td></td>
+        </tr>
+        <tr class="row-pass">
+          <td><span class="hu-class">TestHU07PanelEstadisticas</span></td>
+          <td>test_03_limite_responsive_mobile</td>
+          <td>El panel se ve correctamente en resolución móvil (375x667).</td>
+          <td><span class="badge badge-pass">✅ PASS</span></td>
+          <td>8.74s</td>
+          <td></td>
+        </tr> y ) ...</html>

@@ -1,0 +1,263 @@
+# Historias de Usuario – Inventario App
+# Copia cada bloque exactamente en Jira o Azure DevOps
+# Formato: Título / Como... quiero... para... / Criterios de Aceptación / Criterios de Rechazo
+
+═══════════════════════════════════════════════════════════════
+HU-01 | Acceso a la aplicación
+═══════════════════════════════════════════════════════════════
+
+TÍTULO: Acceso exitoso a la aplicación de inventario
+
+DESCRIPCIÓN (Como / Quiero / Para):
+Como usuario del sistema de inventario,
+quiero poder acceder a la aplicación web ingresando a la URL principal,
+para visualizar el panel de gestión de productos e iniciar mi trabajo.
+
+CRITERIOS DE ACEPTACIÓN:
+  ✔ Dado que el usuario ingresa a http://localhost:3000,
+    cuando la página termina de cargar,
+    entonces debe visualizarse el panel principal con la lista de productos y estadísticas.
+
+  ✔ Dado que el usuario accede a la aplicación,
+    cuando el tiempo de carga es medido,
+    entonces la página debe cargar en menos de 5 segundos.
+
+  ✔ Dado que el usuario navega entre secciones de la app,
+    cuando cambia de vista,
+    entonces la interfaz responde sin errores visibles.
+
+CRITERIOS DE RECHAZO:
+  ✘ La página muestra pantalla en blanco sin contenido.
+  ✘ El tiempo de carga supera los 5 segundos.
+  ✘ Aparece un error de JavaScript no controlado ("Uncaught TypeError", etc.).
+  ✘ La URL devuelve un error 404 o 500.
+
+PRIORIDAD: Alta
+ESTIMACIÓN: 1 punto
+
+
+═══════════════════════════════════════════════════════════════
+HU-02 | Agregar producto al inventario (CREATE)
+═══════════════════════════════════════════════════════════════
+
+TÍTULO: Agregar un nuevo producto con datos válidos
+
+DESCRIPCIÓN (Como / Quiero / Para):
+Como administrador del inventario,
+quiero poder agregar nuevos productos proporcionando nombre, categoría, precio y stock,
+para mantener actualizado el catálogo de productos disponibles.
+
+CRITERIOS DE ACEPTACIÓN:
+  ✔ Dado que el usuario hace clic en "Agregar Producto",
+    cuando el formulario se abre,
+    entonces se muestran los campos: Nombre, Categoría, Precio y Stock.
+
+  ✔ Dado que el usuario rellena todos los campos con datos válidos (nombre no vacío,
+    precio > 0, stock ≥ 0),
+    cuando hace clic en "Guardar",
+    entonces el producto aparece en la lista con los datos ingresados.
+
+  ✔ Dado que el stock ingresado es 0,
+    cuando el producto es guardado,
+    entonces su estado se clasifica automáticamente como "Agotado".
+
+  ✔ Dado que el stock ingresado es entre 1 y 5,
+    cuando el producto es guardado,
+    entonces su estado se clasifica como "Bajo Stock".
+
+CRITERIOS DE RECHAZO:
+  ✘ El formulario permite guardar un producto con el campo Nombre vacío.
+  ✘ Se acepta un precio negativo o no numérico.
+  ✘ El sistema genera un error al recibir un nombre con 300+ caracteres.
+  ✘ El producto no aparece en la lista después de guardarlo.
+  ✘ El formulario no se cierra tras guardar correctamente.
+
+PRIORIDAD: Alta
+ESTIMACIÓN: 3 puntos
+
+
+═══════════════════════════════════════════════════════════════
+HU-03 | Visualizar lista de productos (READ)
+═══════════════════════════════════════════════════════════════
+
+TÍTULO: Ver el inventario completo de productos
+
+DESCRIPCIÓN (Como / Quiero / Para):
+Como administrador del inventario,
+quiero poder ver todos los productos registrados en una lista o tabla,
+para tener visibilidad del inventario en todo momento.
+
+CRITERIOS DE ACEPTACIÓN:
+  ✔ Dado que la aplicación carga,
+    cuando hay productos registrados,
+    entonces se muestra una tabla/lista con al menos: nombre, categoría, precio, stock y estado.
+
+  ✔ Dado que no hay productos registrados,
+    cuando la lista está vacía,
+    entonces se muestra un mensaje indicando que no hay productos (no una pantalla rota).
+
+  ✔ Dado que la aplicación carga,
+    cuando se muestra el panel de estadísticas,
+    entonces se presentan contadores numéricos del inventario (total productos, disponibles, etc.).
+
+  ✔ Dado que el usuario reduce la pantalla a móvil (375px),
+    cuando visualiza la lista,
+    entonces la interfaz se adapta sin romperse.
+
+CRITERIOS DE RECHAZO:
+  ✘ La lista muestra texto "undefined" o "null" en cualquier celda.
+  ✘ Hay errores de JavaScript tipo "Cannot read properties of undefined".
+  ✘ En vista móvil, el contenido se desborda horizontalmente sin posibilidad de scroll.
+  ✘ El panel de estadísticas no actualiza sus contadores al agregar/eliminar productos.
+
+PRIORIDAD: Alta
+ESTIMACIÓN: 2 puntos
+
+
+═══════════════════════════════════════════════════════════════
+HU-04 | Editar producto existente (UPDATE)
+═══════════════════════════════════════════════════════════════
+
+TÍTULO: Modificar los datos de un producto del inventario
+
+DESCRIPCIÓN (Como / Quiero / Para):
+Como administrador del inventario,
+quiero poder editar los datos de un producto ya registrado (nombre, precio, stock, categoría),
+para corregir errores o actualizar información sin necesidad de eliminarlo y recrearlo.
+
+CRITERIOS DE ACEPTACIÓN:
+  ✔ Dado que el usuario hace clic en el botón "Editar" de un producto,
+    cuando se abre el formulario de edición,
+    entonces los campos se muestran pre-cargados con los datos actuales del producto.
+
+  ✔ Dado que el usuario modifica uno o más campos con valores válidos,
+    cuando hace clic en "Guardar" o "Actualizar",
+    entonces la lista refleja los nuevos datos inmediatamente.
+
+  ✔ Dado que el usuario actualiza el stock a un valor que cambia el estado
+    (ej. de 10 a 0),
+    cuando guarda los cambios,
+    entonces el estado del producto se actualiza automáticamente.
+
+CRITERIOS DE RECHAZO:
+  ✘ El formulario de edición no pre-carga los datos existentes del producto.
+  ✘ Se acepta un precio negativo al editar.
+  ✘ El sistema falla o se bloquea con stock = 999999.
+  ✘ Los cambios no se reflejan en la lista sin recargar la página.
+  ✘ Guardar con campos vacíos obligatorios es permitido.
+
+PRIORIDAD: Alta
+ESTIMACIÓN: 3 puntos
+
+
+═══════════════════════════════════════════════════════════════
+HU-05 | Eliminar producto del inventario (DELETE)
+═══════════════════════════════════════════════════════════════
+
+TÍTULO: Eliminar un producto del inventario
+
+DESCRIPCIÓN (Como / Quiero / Para):
+Como administrador del inventario,
+quiero poder eliminar productos que ya no están disponibles o que fueron ingresados por error,
+para mantener el inventario actualizado y sin registros obsoletos.
+
+CRITERIOS DE ACEPTACIÓN:
+  ✔ Dado que el usuario hace clic en "Eliminar" de un producto,
+    cuando confirma la acción (en diálogo o modal),
+    entonces el producto desaparece de la lista inmediatamente.
+
+  ✔ Dado que el usuario hace clic en "Eliminar" y luego cancela,
+    cuando regresa a la lista,
+    entonces el producto sigue presente y no fue modificado.
+
+  ✔ Dado que el usuario elimina todos los productos uno a uno,
+    cuando la lista queda vacía,
+    entonces la interfaz se mantiene estable (sin errores).
+
+CRITERIOS DE RECHAZO:
+  ✘ El producto se elimina sin pedir confirmación al usuario.
+  ✘ Cancelar la eliminación igualmente borra el producto.
+  ✘ Eliminar todos los productos genera un error de JavaScript.
+  ✘ Las estadísticas del panel no se actualizan tras eliminar.
+
+PRIORIDAD: Alta
+ESTIMACIÓN: 2 puntos
+
+
+═══════════════════════════════════════════════════════════════
+HU-06 | Clasificación automática de productos por estado
+═══════════════════════════════════════════════════════════════
+
+TÍTULO: Ver el estado de disponibilidad de cada producto
+
+DESCRIPCIÓN (Como / Quiero / Para):
+Como administrador del inventario,
+quiero que cada producto muestre automáticamente su estado de disponibilidad
+(Disponible, Bajo Stock, Agotado) según su stock,
+para identificar rápidamente qué productos necesitan reabastecimiento.
+
+CRITERIOS DE ACEPTACIÓN:
+  ✔ Dado que un producto tiene stock > 5,
+    cuando se visualiza en la lista,
+    entonces su estado es "Disponible".
+
+  ✔ Dado que un producto tiene stock entre 1 y 5 (inclusive),
+    cuando se visualiza en la lista,
+    entonces su estado es "Bajo Stock".
+
+  ✔ Dado que un producto tiene stock = 0,
+    cuando se visualiza en la lista,
+    entonces su estado es "Agotado".
+
+  ✔ Dado que existe un filtro por estado,
+    cuando el usuario selecciona "Agotado",
+    entonces solo se muestran los productos con stock = 0.
+
+CRITERIOS DE RECHAZO:
+  ✘ Un producto con stock 0 aparece como "Disponible".
+  ✘ Se muestra el texto "undefined" o "null" como estado.
+  ✘ El estado no cambia al editar el stock de un producto.
+  ✘ El filtro por estado muestra productos que no corresponden al estado seleccionado.
+
+PRIORIDAD: Media
+ESTIMACIÓN: 2 puntos
+
+
+═══════════════════════════════════════════════════════════════
+HU-07 | Panel de estadísticas del inventario
+═══════════════════════════════════════════════════════════════
+
+TÍTULO: Visualizar estadísticas generales del inventario
+
+DESCRIPCIÓN (Como / Quiero / Para):
+Como administrador del inventario,
+quiero ver un panel con estadísticas resumidas del inventario
+(total de productos, productos disponibles, bajo stock y agotados),
+para tomar decisiones rápidas sobre reabastecimiento sin revisar producto por producto.
+
+CRITERIOS DE ACEPTACIÓN:
+  ✔ Dado que el usuario accede a la aplicación,
+    cuando la página carga,
+    entonces el panel muestra: total de productos, cantidad disponible,
+    cantidad en bajo stock y cantidad agotada.
+
+  ✔ Dado que el usuario agrega un nuevo producto,
+    cuando regresa al panel,
+    entonces el contador "Total" se incrementa en 1.
+
+  ✔ Dado que el usuario elimina un producto,
+    cuando observa el panel,
+    entonces el contador correspondiente disminuye correctamente.
+
+  ✔ Dado que el usuario accede en pantalla móvil (375px de ancho),
+    cuando visualiza el panel,
+    entonces las tarjetas de estadísticas son legibles y no se desbordan.
+
+CRITERIOS DE RECHAZO:
+  ✘ Las estadísticas no se actualizan al agregar o eliminar productos.
+  ✘ El panel muestra valores "NaN", "undefined" o "null".
+  ✘ Hay errores de JavaScript visibles en consola tipo SEVERE.
+  ✘ En móvil, el panel se desborda o las tarjetas se superponen.
+
+PRIORIDAD: Media
+ESTIMACIÓN: 2 puntos
