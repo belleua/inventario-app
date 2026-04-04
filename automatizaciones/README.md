@@ -1,10 +1,10 @@
-# 🧪 Pruebas Automatizadas – Inventario App
+#  Pruebas Automatizadas – Inventario App
 
 Proyecto de pruebas Selenium para la aplicación **inventario-app** (React + Bootstrap).
 
 ---
 
-## 📁 Estructura del proyecto
+##  Estructura del proyecto
 
 ```
 selenium-inventario/
@@ -19,7 +19,7 @@ selenium-inventario/
 
 ---
 
-## ⚙️ Requisitos previos
+##  Requisitos previos
 
 | Herramienta | Versión mínima |
 |-------------|---------------|
@@ -29,7 +29,7 @@ selenium-inventario/
 
 ---
 
-## 🚀 Instalación paso a paso
+##  Instalación paso a paso
 
 ### 1. Clona este repositorio de pruebas (o copia los archivos)
 
@@ -71,19 +71,7 @@ Asegúrate de que esté corriendo en `http://localhost:3000`.
 
 ---
 
-## ▶️ Ejecutar las pruebas
-
-### Opción A – Con reporte HTML (recomendado)
-
-```bash
-python run_report.py
-```
-
-Genera:
-- `reports/reporte_YYYYMMDD_HHMMSS.html` → Reporte visual completo
-- `screenshots/*.png` → Capturas de cada escenario
-
-### Opción B – Directamente con unittest
+##  Ejecutar las pruebas
 
 ```bash
 python -m pytest tests/test_inventario.py -v
@@ -93,7 +81,7 @@ python tests/test_inventario.py
 
 ---
 
-## 📋 Historias de Usuario cubiertas
+## Historias de Usuario cubiertas
 
 | ID   | Historia                            | Pruebas |
 |------|-------------------------------------|---------|
@@ -109,7 +97,7 @@ python tests/test_inventario.py
 
 ---
 
-## 🖥️ Modo headless (sin abrir navegador)
+##  Modo headless (sin abrir navegador)
 
 Edita `tests/test_inventario.py` y descomenta esta línea en `get_driver()`:
 
@@ -124,8 +112,7 @@ options.add_argument("--headless=new")
 ```
 
 ---
-
-## 📸 Capturas automáticas
+##  Capturas automáticas
 
 Todas las capturas se guardan en `screenshots/` con formato:
 
@@ -137,7 +124,7 @@ El reporte HTML las incrusta directamente en formato base64.
 
 ---
 
-## 🔗 Accesos requeridos
+##  Accesos requeridos
 
 - Repositorio GitHub: público
 - Jira/Azure DevOps: acceso a `ktejada@itla.edu.do` y `20186927@itla.edu.do`
@@ -145,7 +132,7 @@ El reporte HTML las incrusta directamente en formato base64.
 
 ---
 
-## 🛠️ Tecnologías
+##  Tecnologías utilizadas
 
 - **Lenguaje:** Python 3
 - **Framework de pruebas:** `unittest` (estándar de Python)
